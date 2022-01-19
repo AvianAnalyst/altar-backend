@@ -1,0 +1,28 @@
+javascript_include_tag ""
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+kk
+<h1>HOME</h1>
+<p>Leave your offering</p>
+<form method="post" action="/offering">
+  <input type="text" name="offering">
+  <br/>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+    $('body').terminal({
+        hello: function(what) {
+            this.echo('Hello, ' + what +
+                '. Welcome to this terminal.');
+        },
+        place: function(...args) {
+            this.echo('Your submission has been received.');
+        }
+    }, {
+        greetings: 'What do you offer?',
+        checkArity: false
+    });
+</script>
+
